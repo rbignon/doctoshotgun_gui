@@ -1,0 +1,55 @@
+[tool.briefcase]
+project_name = "doctoshotgun_gui"
+bundle = "com.doctoshotgun"
+version = "0.0.1"
+url = "https://doctoshotgun.com"
+license = "GNU General Public License v3 (GPLv3)"
+author = 'Romain Bignon'
+author_email = "romain@doctoshotgun.com"
+
+[tool.briefcase.app.doctoshotgun_gui]
+formal_name = "Doctoshotgun"
+description = "Book vaccine slots on Doctolib"
+icon = "doctoshotgun_gui/resources/doctoshotgun_gui"
+sources = ['doctoshotgun_gui']
+requires = [
+    #'doctoshotgun'
+    '/home/rom1/src/doctoshotgun',
+]
+
+
+[tool.briefcase.app.doctoshotgun_gui.macOS]
+requires = [
+    'toga-cocoa>=0.3.0.dev20',
+]
+
+[tool.briefcase.app.doctoshotgun_gui.linux]
+requires = [
+    #'toga-gtk>=0.3.0.dev20',
+    '/home/rom1/src/beeware/toga/src/gtk',
+]
+system_requires = [
+    'libgirepository1.0-dev',
+    'libcairo2-dev',
+    'libpango1.0-dev',
+    'libwebkitgtk-3.0-0',
+    'gir1.2-webkit-3.0',
+]
+
+[tool.briefcase.app.doctoshotgun_gui.windows]
+requires = [
+    'toga-winforms>=0.3.0.dev20',
+]
+
+# Mobile deployments
+[tool.briefcase.app.doctoshotgun_gui.iOS]
+requires = [
+    'toga-iOS>=0.3.0.dev20',
+]
+
+[tool.briefcase.app.doctoshotgun_gui.android]
+requires = [
+    #'toga-android>=0.3.0.dev20',
+    '/home/rom1/src/beeware/toga/src/android',
+]
+support_package = '/home/rom1/src/beeware/Python-Android-support/dist/Python-3.9-Android-support.zip'
